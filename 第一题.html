@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//第一种方法 通过截取字符串来弄的
+		/*function confirmEnding(str,target){
+			//创建一个变量用来保存目标元素的长度
+			var len = target.length
+			//console.log(-len)
+			//截取字符串
+			var newStr = str.substr(-len)
+			if(newStr===target)return true
+			alert("请填写正确的值")
+		}
+		var bol = confirmEnding("He has to give me a new name", "me")
+		console.log(bol)*/
+
+		//第二种 通过数组的切割 拼接
+		/*function confirmEnding(str,target){
+			//定义目标元素的长度
+			var len = target.length
+			//将字符串切割成数组，在拼接回字符串,在切割成数组
+			var newStr = str.split(" ").join("").split("").join("")
+			//console.log(arr[len])
+			//slice() 从什么位置开始截取  结束的下标  这里的结束的下标没有 ，填一个值默认到最后
+			newStr = newStr.slice(-len)
+			if(newStr===target)return true
+		}
+		var bol = confirmEnding("He has to give me a new name", "me")
+		console.log(bol)*/
+		//第三种方法
+		function confirmEnding(str,target){
+			//利用切割的方法 去切割字符串的最后一项 如果最后一项为""的话就证明一样 那就 return 出去的true
+			var arr = str.split(target)
+			console.log(arr)
+			console.log(arr.length-1)
+			if(arr[arr.length-1]){
+				return false
+			}else{
+				return true
+			}
+		}
+		var bol = confirmEnding("He has to give me a new name", "me")
+		console.log(bol)
+	</script>
+ </body>
+</html>

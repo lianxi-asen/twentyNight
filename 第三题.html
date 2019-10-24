@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//方法一  全循环
+		/*function isPalindrome(str){
+			var len = str.length
+			for(var i = 0;i<len;i++){
+				//第一个 和leng-1在减去i最后一个 这样一次比较
+				if(str[i]===str[len-1-i]){
+					return true
+				}
+				return false
+			}
+		}
+		var bol = isPalindrome('madam');
+		console.log(bol)*/
+
+		//第二种方法  只循环一半去判断
+		function isPalindrome(str){
+			var len = parseInt(str.length/2)
+			for(var i = 0;i<len;i++){
+				if(str[i]===str[len-1-i]){
+					return true 
+				}
+				return false
+			}
+			
+		}
+		var bol = isPalindrome('madam')
+		console.log(bol)
+	</script>
+ </body>
+</html>

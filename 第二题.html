@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<script>
+		//反转数字
+		//第一种方法
+		/*function reverseNumber(str){
+			var arr = str.split("").reverse().join("")
+			return parseInt(arr)	
+		}
+		var num = reverseNumber("1223455");
+		console.log(num)*/
+		//第二种方法
+		/*function reverseNumber(number){
+			//利用字符串的方法 先将数字转为字符串
+			var str = number+""
+			var len = str.length
+			var newStr = 0;
+			//for循环 循环每一个 字符
+			for(var i=0;i<len;i++){
+				//console.log(number%10)//6
+				newStr = newStr*10+number%10
+				//console.log(newStr)
+				number = parseInt(number/10)	
+			}
+			return newStr
+		}
+		var str = reverseNumber(123456)
+		console.log(str)*/
+		//第三种方法 利用for循环的减减来排序
+		function reverseNumber(str){
+			var num = ""+str
+			var len = num.length
+			var newStr = ""
+			for(var i = len-1;i>=0;i--){
+				newStr += num[i]
+			}
+			return Number(newStr)
+		}
+		var num = reverseNumber(123456)
+		console.log(num)
+	</script>
+ </body>
+</html>
