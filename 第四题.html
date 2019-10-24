@@ -9,6 +9,38 @@
   <title>Document</title>
  </head>
  <body>
-  
+    <script>
+        function substrings(str){
+            console.log(str)
+            //定义一个空数组 用来保存截取后的数组
+            var arr = []
+            //定义字符的长度
+            var len = str.length
+            //外层循环 循环下标
+            //就比如
+                    /*
+                    dog
+                    外层循环
+                    0的时候str.substr(下标,数量)
+                    0的时候d 
+                    1的时候 o
+                    2的时候 g 
+                    里面的循环  循环数量
+                    */
+            for(var i = 0;i<len;i++){
+                for(var j = 1;j<=len-i;j++){//默认从1的位置开始截取 
+                        /*
+                            1小于 2-0 = 2 1小于等于2  小于执行下面的代码  在进行j++
+                            2小于 2-0 = 2 2小于等于2  执行下面的代码   在进行j++
+                            3 小于 2-0 = 2 3小于等于2 不跳出循环
+                        */
+                    arr.push(str.substr(i,j))
+                }
+            }
+            return arr
+        }
+        var arr = substrings("dog")
+        console.log(arr)
+    </script>
  </body>
 </html>
